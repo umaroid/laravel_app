@@ -12,9 +12,15 @@
 */
 
 Route::get('/', function () {
-    //return view('welcome');
-    return 123;
+    return view('welcome');
+    //return 123;
 });
+
+Route::get('sample/mailable/preview', function(){
+   return new App\Mail\SampleNotification(); 
+});
+
+Route::get('sample/mailable/send', 'SampleController@SampleNotification');
 
 Auth::routes();
 
